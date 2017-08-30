@@ -34,7 +34,7 @@ public class FragmentLazyLoad extends Fragment {
     private CompositeDisposable disposables;
     private PublishProcessor<Integer> lazyLoader;
     private boolean requestUnderWay = false;
-    private int PER_PAGE_DATA = 6;
+    private int PER_PAGE_DATA_COUNT = 6;
 
 
     @Override
@@ -114,7 +114,7 @@ public class FragmentLazyLoad extends Fragment {
             .observeOn(AndroidSchedulers.mainThread())
                 .map(dummy -> {
                     List<User> users = new ArrayList<>();
-                    for (int i = 0; i < PER_PAGE_DATA; i++) {
+                    for (int i = 0; i < PER_PAGE_DATA_COUNT; i++) {
                         User user = new User();
                         user.setName("User " + (i + pageStart));
                         user.setEmail("yeahia.arif@gmail.com");
